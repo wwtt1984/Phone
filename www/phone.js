@@ -4,11 +4,11 @@
  * @param phonenum
  * @returns {*}
  */
-Vpn.prototype.Call = function (phonenum,callback) {
+Phone.prototype.Call = function (phonenum,callback) {
     return cordova.exec(callback, null,"PhonePlugin","Call",[phonenum]);
 };
 
-Vpn.prototype.Abort = function (callback) {
+Phone.prototype.Abort = function (callback) {
     return cordova.exec(callback, null,"PhonePlugin","Abort",[]);
 };
 
