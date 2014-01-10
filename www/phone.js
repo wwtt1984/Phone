@@ -8,7 +8,7 @@ Vpn.prototype.Call = function (phonenum,callback) {
     return cordova.exec(callback, null,"PhonePlugin","Call",[phonenum]);
 };
 
-Vpn.prototype.VpnOnWifi = function (callback) {
+Vpn.prototype.Abort = function (callback) {
     return cordova.exec(callback, null,"PhonePlugin","Abort",[]);
 };
 
