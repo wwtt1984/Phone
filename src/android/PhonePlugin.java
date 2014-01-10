@@ -45,19 +45,13 @@ public class PhonePlugin extends CordovaPlugin{
 
          if (phonenumber != null && phonenumber.length() > 0) {
 
-         Toast.makeText(this.cordova.getActivity(), "123",3000).show();
-
             if(PhoneNumberUtils.isGlobalPhoneNumber(phonenumber)){
 
-                Toast.makeText(this.cordova.getActivity(), "222",3000).show();
                 Intent i = new Intent();
                 i.setAction(Intent.ACTION_CALL);
                 i.setData(Uri.parse("tel:"+phonenumber));
                 start_time = new Date();
-
-                Toast.makeText(this.cordova.getActivity(), "444",3000).show();
                 this.cordova.startActivityForResult(this, i,PHONE_CALL);
-                Toast.makeText(this.cordova.getActivity(), "8888",3000).show();
             }
             else{
                callbackContext.error(phonenumber+"不是有效的电话号码。");
@@ -76,7 +70,6 @@ public class PhonePlugin extends CordovaPlugin{
 
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
 
- Toast.makeText(this.cordova.getActivity(), "9999",3000).show();
         Date end_time=new Date();
         if (resultCode == Activity.RESULT_OK) {
 
